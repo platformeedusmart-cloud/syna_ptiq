@@ -1,0 +1,1087 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="EduSmart by Future Flame Association - Learn, grow and succeed with smart education.">
+<title>EduSmart | Future Flame Association</title>
+
+<style>
+:root {
+  --primary: #5146e5;
+  --secondary: #13b8a6;
+  --dark: #17213b;
+  --muted: #697386;
+  --light: #f5f7ff;
+  --white: #ffffff;
+  --border: #e8eaf3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--dark);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+
+.container {
+  width: min(1160px, 92%);
+  margin: auto;
+}
+
+/* Navigation */
+header {
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  min-height: 78px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 23px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: linear-gradient(135deg, var(--primary), #8878ff);
+  font-size: 23px;
+  box-shadow: 0 6px 18px #5146e533;
+}
+
+.brand small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #48516a;
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 11px;
+  padding: 12px 21px;
+  font-weight: 700;
+  transition: .2s;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #3e33c7;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: white;
+  border: 1px solid var(--border);
+  color: var(--dark);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  font-size: 28px;
+}
+
+/* Hero */
+.hero {
+  background:
+    radial-gradient(circle at 85% 20%, #dcd8ff 0, transparent 28%),
+    linear-gradient(120deg, #f7f8ff, #effcfb);
+  padding: 88px 0 80px;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  background: #e8e6ff;
+  color: var(--primary);
+  border-radius: 30px;
+  padding: 7px 14px;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 5vw, 60px);
+  line-height: 1.12;
+  letter-spacing: -2px;
+  margin-bottom: 22px;
+}
+
+.hero h1 span { color: var(--primary); }
+
+.hero p {
+  max-width: 550px;
+  color: var(--muted);
+  font-size: 17px;
+  margin-bottom: 29px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-note {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.hero-visual {
+  position: relative;
+  padding: 25px;
+}
+
+.learning-card {
+  background: white;
+  border: 1px solid #ffffff;
+  padding: 28px;
+  border-radius: 24px;
+  box-shadow: 0 25px 70px #393a7317;
+  transform: rotate(1deg);
+}
+
+.learning-card .illustration {
+  height: 175px;
+  background: linear-gradient(135deg, #e8e5ff, #d7faf3);
+  border-radius: 17px;
+  display: grid;
+  place-items: center;
+  font-size: 78px;
+  margin-bottom: 24px;
+}
+
+.learning-card h3 { margin-bottom: 6px; }
+
+.learning-card p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin: 22px 0 8px;
+}
+
+.progress {
+  height: 8px;
+  background: #eeeefa;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress div {
+  height: 100%;
+  width: 72%;
+  background: var(--secondary);
+  border-radius: inherit;
+}
+
+.floating-badge {
+  position: absolute;
+  background: white;
+  padding: 13px 17px;
+  border-radius: 14px;
+  box-shadow: 0 10px 35px #17213b15;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.badge-top { top: 0; right: 0; }
+.badge-bottom { bottom: 5px; left: 0; }
+
+/* Shared sections */
+section { padding: 76px 0; }
+
+.section-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 42px;
+}
+
+.section-heading h2 {
+  font-size: clamp(27px, 4vw, 38px);
+  line-height: 1.2;
+  margin-bottom: 13px;
+}
+
+.section-heading p { color: var(--muted); }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  padding-top: 34px;
+  padding-bottom: 34px;
+}
+
+.stat {
+  text-align: center;
+  padding: 18px;
+}
+
+.stat strong {
+  display: block;
+  font-size: 29px;
+  color: var(--primary);
+}
+
+.stat span { font-size: 13px; color: var(--muted); }
+
+/* Features */
+.features { background: var(--light); }
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.feature-card {
+  background: white;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  transition: .25s;
+}
+
+.feature-card:hover, .course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px #252b4a10;
+}
+
+.feature-icon {
+  width: 53px;
+  height: 53px;
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+  border-radius: 15px;
+  background: #eeecff;
+  margin-bottom: 18px;
+}
+
+.feature-card:nth-child(2) .feature-icon { background: #ddfaf4; }
+.feature-card:nth-child(3) .feature-icon { background: #fff0da; }
+
+.feature-card h3 { margin-bottom: 10px; }
+.feature-card p { color: var(--muted); font-size: 14px; }
+
+/* Courses */
+.course-tools {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.course-tools input, .course-tools select {
+  min-height: 45px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: white;
+  color: var(--dark);
+}
+
+.course-tools input { flex: 1; min-width: 190px; }
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.course-card {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: .25s;
+  background: white;
+}
+
+.course-cover {
+  min-height: 145px;
+  display: grid;
+  place-items: center;
+  font-size: 55px;
+}
+
+.cover-purple { background: #eeebff; }
+.cover-green { background: #ddfaf1; }
+.cover-orange { background: #fff0dd; }
+.cover-blue { background: #e1efff; }
+.cover-pink { background: #ffe5ef; }
+.cover-yellow { background: #fff8ce; }
+
+.course-body { padding: 22px; }
+
+.course-tag {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--primary);
+  background: #efedff;
+  margin-bottom: 11px;
+}
+
+.course-body h3 { margin-bottom: 8px; font-size: 19px; }
+.course-body p { color: var(--muted); font-size: 13px; min-height: 42px; }
+
+.course-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  padding-top: 15px;
+  margin-top: 18px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.course-footer button {
+  color: var(--primary);
+  border: 0;
+  background: none;
+  font-weight: 800;
+}
+
+/* AI */
+.ai-section { padding-top: 15px; }
+
+.ai-panel {
+  border-radius: 25px;
+  padding: 50px;
+  color: white;
+  background: linear-gradient(125deg, #27235f, #5146e5);
+  display: grid;
+  grid-template-columns: 1fr .9fr;
+  align-items: center;
+  gap: 35px;
+}
+
+.ai-panel h2 {
+  font-size: 34px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.ai-panel p {
+  color: #e0dfff;
+  margin-bottom: 24px;
+}
+
+.ai-panel .btn {
+  background: white;
+  color: var(--primary);
+}
+
+.ai-demo {
+  background: white;
+  color: var(--dark);
+  border-radius: 18px;
+  padding: 23px;
+}
+
+.ai-demo h3 { font-size: 15px; margin-bottom: 14px; }
+
+.chat-message {
+  background: #f0efff;
+  padding: 13px;
+  border-radius: 12px;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.chat-message.answer { background: #e7faf5; }
+
+.ai-input {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.ai-input input {
+  width: 100%;
+  min-width: 0;
+  padding: 11px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+}
+
+.ai-input button {
+  border: none;
+  border-radius: 9px;
+  background: var(--primary);
+  color: white;
+  padding: 0 15px;
+}
+
+/* Signup */
+.join-section { background: var(--light); }
+
+.join-box {
+  max-width: 760px;
+  margin: auto;
+  text-align: center;
+}
+
+.join-box h2 { font-size: 34px; margin-bottom: 12px; }
+.join-box p { color: var(--muted); margin-bottom: 25px; }
+
+/* Footer */
+footer {
+  background: #151b32;
+  color: white;
+  padding: 45px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 35px;
+  margin-bottom: 35px;
+}
+
+footer .brand { color: white; margin-bottom: 16px; }
+footer .brand small { color: #bdc4da; }
+footer p, footer a { color: #bdc4da; font-size: 13px; }
+footer h4 { margin-bottom: 15px; }
+.footer-links { display: grid; gap: 9px; }
+
+.copyright {
+  border-top: 1px solid #303650;
+  padding-top: 18px;
+  text-align: center;
+  color: #bdc4da;
+  font-size: 12px;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: #10162bbd;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 300;
+}
+
+.modal.show { display: flex; }
+
+.modal-box {
+  width: min(430px, 100%);
+  background: white;
+  border-radius: 20px;
+  padding: 28px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-box h2 { margin-bottom: 8px; }
+.modal-box > p { color: var(--muted); font-size: 13px; margin-bottom: 20px; }
+
+.close-modal {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  border: 0;
+  background: none;
+  font-size: 26px;
+}
+
+.form-field { margin-bottom: 14px; }
+.form-field label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+
+.form-field input, .form-field select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+}
+
+.modal-box .btn { width: 100%; margin-top: 6px; }
+
+.notice {
+  display: none;
+  background: #fff4d9;
+  color: #77530b;
+  padding: 12px;
+  border-radius: 9px;
+  margin-top: 13px;
+  font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 22px 5%;
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+
+  .nav-links.open { display: flex; }
+  .menu-toggle { display: block; }
+
+  .hero-grid, .ai-panel { grid-template-columns: 1fr; }
+  .hero { padding: 60px 0; }
+  .hero-visual { max-width: 500px; width: 100%; margin: auto; }
+  .feature-grid, .course-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .feature-grid, .course-grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .hero h1 { letter-spacing: -1px; }
+  .ai-panel { padding: 28px 22px; }
+  .ai-panel h2 { font-size: 28px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .learning-card { padding: 20px; }
+  .floating-badge { font-size: 11px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+    <a href="#home" class="brand">
+      <span class="logo">✦</span>
+      <span>
+        EduSmart
+        <small>BY FUTURE FLAME ASSOCIATION</small>
+      </span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#features">Why EduSmart?</a>
+      <a href="#courses">Courses</a>
+      <a href="#ai">AI Assistant</a>
+      <button class="btn btn-outline" onclick="openModal('login')">Log In</button>
+      <button class="btn btn-primary" onclick="openModal('signup')">Get Started</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">✦ YOUR FUTURE STARTS HERE</span>
+        <h1>Learn Smarter.<br>Dream Bigger.<br><span>Achieve More.</span></h1>
+        <p>
+          Discover a smarter way to learn with interactive courses,
+          personalized learning paths, and AI-powered educational support.
+          Your journey to success starts with EduSmart.
+        </p>
+        <div class="hero-actions">
+          <a href="#courses" class="btn btn-primary">Explore Courses →</a>
+          <button class="btn btn-outline" onclick="openModal('signup')">
+            Join Our Community
+          </button>
+        </div>
+        <div class="hero-note">
+          🎓 Education for everyone · Learn at your own pace
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="floating-badge badge-top">✨ Smart Learning</div>
+        <div class="learning-card">
+          <div class="illustration">📚 💡</div>
+          <h3>Welcome to your learning space!</h3>
+          <p>Build skills, explore ideas, and unlock your potential.</p>
+          <div class="progress-label">
+            <span>Learning journey preview</span>
+            <span>72%</span>
+          </div>
+          <div class="progress"><div></div></div>
+        </div>
+        <div class="floating-badge badge-bottom">🚀 Keep Growing!</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container stats">
+    <div class="stat"><strong>All</strong><span>Learning Levels</span></div>
+    <div class="stat"><strong>24/7</strong><span>Online Access</span></div>
+    <div class="stat"><strong>AI</strong><span>Learning Support</span></div>
+    <div class="stat"><strong>1 Goal</strong><span>Your Success</span></div>
+  </div>
+
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Everything You Need to Succeed</h2>
+        <p>A learning environment designed to make education more accessible,
+          engaging, and effective for every learner.</p>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon">📖</div>
+          <h3>Interactive Learning</h3>
+          <p>Explore lessons, learning materials, and educational activities
+            designed to help you understand concepts step by step.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3>AI Learning Assistant</h3>
+          <p>Get help understanding difficult topics and discover new ways
+            to approach your studies with intelligent learning support.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3>Track Your Progress</h3>
+          <p>Build consistent study habits and follow your learning progress
+            as you work toward your educational goals.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="courses">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Explore Learning Opportunities</h2>
+        <p>Find a subject that interests you and take the next step
+          in your learning journey.</p>
+      </div>
+
+      <div class="course-tools">
+        <input id="courseSearch" type="search"
+          placeholder="Search courses..." aria-label="Search courses">
+        <select id="levelFilter" aria-label="Filter by level">
+          <option value="all">All levels</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </div>
+
+      <div class="course-grid" id="courseGrid">
+        <article class="course-card" data-level="beginner">
+          <div class="course-cover cover-purple">💻</div>
+          <div class="course-body">
+            <span class="course-tag">TECHNOLOGY</span>
+            <h3>Introduction to Programming</h3>
+            <p>Discover programming fundamentals and develop your
+              computational thinking skills.</p>
+            <div class="course-footer">
+              <span>Beginner · Self-paced</span>
+              <button onclick="courseInfo('Introduction to Programming')">Explore →</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="course-card" data-level="intermediate">
+          <div class="course-cover cover-green">🧪</div>
+          <div class="course-body">
+            <span class="course-tag">SCIENCE</span>
+            <h3>Science & Discovery</h3>
+            <p>Explore scientific concepts through explanations,
+              examples, and guided activities.</p>
+            <div class="course-footer">
+              <span>Intermediate</span>
+              <button onclick="courseInfo('Science & Discovery')">Explore →</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="course-card" data-level="beginner">
+          <div class="course-cover cover-orange">🌍</div>
+          <div class="course-body">
+            <span class="course-tag">LANGUAGES</span>
+            <h3>English Language Skills</h3>
+            <p>Improve vocabulary, grammar, reading, and everyday
+              communication skills.</p>
+            <div class="course-footer">
+              <span>Beginner · Self-paced</span>
+              <button onclick="courseInfo('English Language Skills')">Explore →</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="course-card" data-level="intermediate">
+          <div class="course-cover cover-blue">📐</div>
+          <div class="course-body">
+            <span class="course-tag">MATHEMATICS</span>
+            <h3>Mathematics Made Easy</h3>
+            <p>Practice essential mathematical skills with clear,
+              structured explanations.</p>
+            <div class="course-footer">
+              <span>Intermediate</span>
+              <button onclick="courseInfo('Mathematics Made Easy')">Explore →</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="course-card" data-level="advanced">
+          <div class="course-cover cover-pink">🧠</div>
+          <div class="course-body">
+            <span class="course-tag">ARTIFICIAL INTELLIGENCE</span>
+            <h3>Discover Artificial Intelligence</h3>
+            <p>Learn core AI concepts and discover how intelligent
+              systems solve real-world problems.</p>
+            <div class="course-footer">
+              <span>Advanced</span>
+              <button onclick="courseInfo('Discover Artificial Intelligence')">Explore →</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="course-card" data-level="beginner">
+          <div class="course-cover cover-yellow">🎨</div>
+          <div class="course-body">
+            <span class="course-tag">CREATIVITY</span>
+            <h3>Creative Skills & Innovation</h3>
+            <p>Develop creative thinking, problem-solving, and
+              project-planning skills.</p>
+            <div class="course-footer">
+              <span>Beginner</span>
+              <button onclick="courseInfo('Creative Skills & Innovation')">Explore →</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p id="noCourses" style="display:none;text-align:center;padding:30px;color:#697386">
+        No courses match your search.
+      </p>
+    </div>
+  </section>
+
+  <section class="ai-section" id="ai">
+    <div class="container">
+      <div class="ai-panel">
+        <div>
+          <span class="eyebrow">YOUR SMART STUDY PARTNER</span>
+          <h2>Meet Your AI Learning Assistant</h2>
+          <p>Have a question? Need a concept explained more clearly?
+            Your learning assistant can help you explore ideas and
+            organize your studies.</p>
+          <button class="btn" onclick="openModal('signup')">
+            Start Learning →
+          </button>
+        </div>
+
+        <div class="ai-demo">
+          <h3>💬 Learning Assistant Preview</h3>
+          <div class="chat-message">
+            <strong>You:</strong><br>
+            How can I improve my study habits?
+          </div>
+          <div class="chat-message answer">
+            <strong>EduSmart Assistant:</strong><br>
+            Start with small goals, study in focused sessions,
+            practice active recall, and review what you learn regularly.
+          </div>
+          <div class="ai-input">
+            <input id="aiQuestion" type="text"
+              placeholder="Ask a sample question..." aria-label="Sample AI question">
+            <button onclick="askDemo()">Ask</button>
+          </div>
+          <p id="aiResponse" role="status"
+            style="font-size:12px;margin-top:12px;color:#697386"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="join-section">
+    <div class="container join-box">
+      <span class="eyebrow">YOUR NEXT CHAPTER STARTS NOW</span>
+      <h2>Ready to Learn Something New?</h2>
+      <p>Join the EduSmart community and take the first step toward
+        your educational goals.</p>
+      <button class="btn btn-primary" onclick="openModal('signup')">
+        Create Your Account →
+      </button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="#home" class="brand">
+          <span class="logo">✦</span>
+          <span>EduSmart<small>BY FUTURE FLAME ASSOCIATION</small></span>
+        </a>
+        <p>Empowering learners through accessible education,
+          technology, and innovation.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#features">About EduSmart</a>
+          <a href="#courses">Learning Resources</a>
+          <a href="#ai">AI Assistant</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Our Mission</h4>
+        <p>Making learning accessible, inspiring creativity,
+          and supporting learners at every stage.</p>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © <span id="year"></span> EduSmart · Future Flame Association.
+      All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- Login and registration interface -->
+<div class="modal" id="accountModal" role="dialog"
+  aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <button class="close-modal" onclick="closeModal()"
+      aria-label="Close dialog">×</button>
+
+    <h2 id="modalTitle">Welcome to EduSmart</h2>
+    <p id="modalDescription">Create your account to begin your learning journey.</p>
+
+    <form id="accountForm">
+      <div class="form-field">
+        <label for="fullName">Full name</label>
+        <input id="fullName" name="fullName" autocomplete="name"
+          placeholder="Your full name" required>
+      </div>
+
+      <div class="form-field">
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email"
+          autocomplete="email" placeholder="you@example.com" required>
+      </div>
+
+      <div class="form-field">
+        <label for="accountRole">I am a</label>
+        <select id="accountRole" name="role">
+          <option value="student">Student</option>
+          <option value="supervisor">Supervisor / Teacher</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password"
+          autocomplete="new-password" minlength="8"
+          placeholder="At least 8 characters" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary" id="submitAccount">
+        Create Account
+      </button>
+
+      <div class="notice" id="formNotice" role="status">
+        This is a front-end demo. Connect the form to your Django backend
+        to register users securely.
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+const modal = document.getElementById("accountModal");
+let modalMode = "signup";
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  });
+});
+
+// Course search and filtering
+function filterCourses() {
+  const search = document.getElementById("courseSearch")
+    .value.toLowerCase().trim();
+  const level = document.getElementById("levelFilter").value;
+  let visible = 0;
+
+  document.querySelectorAll(".course-card").forEach(card => {
+    const matchesText = card.innerText.toLowerCase().includes(search);
+    const matchesLevel = level === "all" || card.dataset.level === level;
+    const show = matchesText && matchesLevel;
+
+    card.style.display = show ? "" : "none";
+    if (show) visible++;
+  });
+
+  document.getElementById("noCourses").style.display =
+    visible === 0 ? "block" : "none";
+}
+
+document.getElementById("courseSearch")
+  .addEventListener("input", filterCourses);
+document.getElementById("levelFilter")
+  .addEventListener("change", filterCourses);
+
+function openModal(mode) {
+  modalMode = mode;
+  const login = mode === "login";
+
+  document.getElementById("modalTitle").textContent =
+    login ? "Welcome Back!" : "Join EduSmart";
+  document.getElementById("modalDescription").textContent =
+    login
+      ? "Enter your details to access your learning space."
+      : "Create your account to begin your learning journey.";
+  document.getElementById("submitAccount").textContent =
+    login ? "Log In" : "Create Account";
+  document.getElementById("password").setAttribute(
+    "autocomplete", login ? "current-password" : "new-password"
+  );
+  document.getElementById("formNotice").style.display = "none";
+  modal.classList.add("show");
+}
+
+function closeModal() {
+  modal.classList.remove("show");
+}
+
+modal.addEventListener("click", event => {
+  if (event.target === modal) closeModal();
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closeModal();
+});
+
+// Front-end demonstration only; no account is actually created.
+document.getElementById("accountForm").addEventListener("submit", event => {
+  event.preventDefault();
+  const notice = document.getElementById("formNotice");
+  notice.textContent = modalMode === "login"
+    ? "Demo only: connect Django authentication to log in securely."
+    : "Demo only: connect Django to create and save student accounts securely.";
+  notice.style.display = "block";
+});
+
+// Course preview
+function courseInfo(name) {
+  alert(name + "\\n\\nThis is a course preview. Connect your Django learning app to display lessons and enrollments.");
+}
+
+// Sample responses, not a live AI model.
+function askDemo() {
+  const question = document.getElementById("aiQuestion").value.trim();
+  const response = document.getElementById("aiResponse");
+
+  if (!question) {
+    response.textContent = "Please enter a question first.";
+    return;
+  }
+
+  response.textContent =
+    "This preview does not use a live AI model yet. Connect a suitable AI API through your Django backend for real answers.";
+}
+
+document.getElementById("aiQuestion").addEventListener("keydown", event => {
+  if (event.key === "Enter") askDemo();
+});
+</script>
+
+</body>
+</html>
